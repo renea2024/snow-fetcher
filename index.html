@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Snow Storm Tracker ❄️</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container" role="main">
+    <h1>Snow Storm Tracker <span aria-hidden="true">❄️</span></h1>
+
+    <form id="locationForm" aria-label="Snow Storm Location Form" novalidate>
+      <label for="locationInput" class="visually-hidden">Enter U.S. city</label>
+      <input
+        type="text"
+        id="locationInput"
+        name="location"
+        placeholder="Enter U.S. city"
+        aria-required="true"
+        autocomplete="off"
+        required
+      />
+      <button type="submit" aria-label="Check for snow storm in entered location">
+        Check for Snow
+      </button>
+    </form>
+
+    <section
+      id="result"
+      role="region"
+      aria-live="polite"
+      aria-atomic="true"
+      tabindex="0"
+      class="weather-info"
+    >
+      <!-- Weather info and messages appear here -->
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
