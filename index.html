@@ -8,22 +8,20 @@
 </head>
 <body>
   <main class="container" role="main">
-    <h1>Snow Storm Tracker <span aria-hidden="true">❄️</span></h1>
+    <h1>Snow Storm Tracker ❄️</h1>
 
     <form id="locationForm" aria-label="Snow Storm Location Form" novalidate>
-      <label for="locationInput" class="visually-hidden">Enter U.S. city</label>
+      <label for="locationInput" class="visually-hidden">Enter US City</label>
       <input
         type="text"
         id="locationInput"
         name="location"
-        placeholder="Enter U.S. city"
+        placeholder="Enter US city"
         aria-required="true"
         autocomplete="off"
         required
       />
-      <button type="submit" aria-label="Check for snow storm in entered location">
-        Check for Snow
-      </button>
+      <button type="submit" aria-label="Check for snow storm in entered location">Check for Snow</button>
     </form>
 
     <section
@@ -36,6 +34,12 @@
     >
       <!-- Weather info and messages appear here -->
     </section>
+
+    <footer class="footer">
+      <p>
+        Powered by <a href="https://openweathermap.org" target="_blank" rel="noopener noreferrer">OpenWeather</a>
+      </p>
+    </footer>
   </main>
 
   <script src="app.js"></script>
