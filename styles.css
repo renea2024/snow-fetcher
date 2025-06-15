@@ -26,7 +26,6 @@
 }
 
 /* Reset & base */
-
 *,
 *::before,
 *::after {
@@ -41,13 +40,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   padding: 1rem;
   overflow: hidden;
+  flex-direction: column; /* stack container and footer vertically */
 }
 
 /* Container */
-
 .container {
   background-color: var(--color-container-bg);
   border-radius: 16px;
@@ -57,15 +56,11 @@ body {
   box-shadow: 0 0 15px var(--color-shadow);
   text-align: center;
   animation: fadeInScale 0.8s ease forwards;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
 }
 
 /* Heading */
-
 h1 {
-  margin: 0;
+  margin-bottom: 1.5rem;
   font-weight: 700;
   font-size: 2rem;
   color: var(--color-primary);
@@ -73,12 +68,11 @@ h1 {
 }
 
 /* Form */
-
 form {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem; /* slightly increased gap for consistent spacing */
-  margin: 0;
+  gap: 1.25rem; /* slightly more consistent spacing */
+  margin-bottom: 1.5rem;
 }
 
 input[type="text"] {
@@ -90,7 +84,6 @@ input[type="text"] {
   font-size: 1rem;
   transition: box-shadow 0.3s ease;
   box-shadow: inset 0 0 5px #0008;
-  width: 100%;
 }
 
 input[type="text"]:focus {
@@ -99,7 +92,6 @@ input[type="text"]:focus {
 }
 
 /* Button */
-
 button {
   padding: 0.85rem 1.5rem;
   border-radius: 10px;
@@ -111,9 +103,6 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
   box-shadow: 0 4px 10px var(--color-shadow);
-  width: 100%;
-  max-width: 200px;
-  align-self: center; /* center the button horizontally */
 }
 
 button:hover,
@@ -135,16 +124,13 @@ button:focus {
   min-height: 4rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: opacity 0.3s ease;
-  text-align: center;
 }
 
-/* Show when it has content */
 .weather-info.active {
   display: block;
 }
 
 /* Error message style */
-
 .weather-info.error {
   background-color: var(--color-error);
   color: white;
@@ -153,7 +139,6 @@ button:focus {
 }
 
 /* Visually hidden for accessibility */
-
 .visually-hidden {
   position: absolute !important;
   width: 1px !important;
@@ -165,8 +150,29 @@ button:focus {
   border: 0 !important;
 }
 
-/* Animations */
+/* Footer */
+.footer {
+  margin-top: 2rem;
+  text-align: center;
+  color: var(--color-input-text);
+  font-size: 0.9rem;
+  max-width: 420px;
+  width: 100%;
+}
 
+.footer a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer a:hover,
+.footer a:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Animations */
 @keyframes fadeInScale {
   0% {
     opacity: 0;
@@ -179,14 +185,13 @@ button:focus {
 }
 
 /* Responsive */
-
 @media (max-width: 450px) {
   .container {
     padding: 1.5rem 2rem;
     max-width: 100%;
   }
-  
-  button {
+  .footer {
     max-width: 100%;
+    padding: 0 1rem;
   }
 }
